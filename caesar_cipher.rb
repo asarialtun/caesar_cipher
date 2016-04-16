@@ -3,7 +3,7 @@ def caesar_cipher(message, key)
   input_array = message.split('').to_ascii
   
   encrypted_array = input_array.map do |item|
-    if (item >=65 && item <=90)||(item >=97 && item <=122)
+   
         if item >= 65 && item <= 90 #Capital letter
             
             if item + key > 90
@@ -18,11 +18,11 @@ def caesar_cipher(message, key)
             else
                 item = item + key
             end
+        else
+            item=item
         end
-    else
-        item=item
     end
-  end
+  
   
  return encrypted_array.to_char.join
 
